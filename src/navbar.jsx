@@ -10,7 +10,7 @@ class VerticalTabs extends Component {
     super(props);
   }
 
-render() {
+  render() {
     return (
       <div className="navbar">
         <Tabs
@@ -21,9 +21,14 @@ render() {
           aria-label="Vertical tabs example"
           className="classes.tabs"
         >
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
+          {
+            (() => this.props.labels.map((currentLabel) => {
+              return (
+                <Tab label={currentLabel} />
+
+              );
+
+            }))()}
         </Tabs>
       </div>
     );

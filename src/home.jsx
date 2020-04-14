@@ -12,6 +12,8 @@ class Home extends Component {
       activeTab: 0
 
     }
+
+    this._labels = ['Home', 'News', 'Projects', 'Publications', 'Talks',  'Teaching', 'Honors', 'Miscellany']
   }
 
   handleTabChange = (evt, newValue) => {
@@ -30,7 +32,7 @@ class Home extends Component {
 
 
         <div className="nabvar">
-          <VerticalTabs activeTab={this.state.activeTab} handleChange={this.handleTabChange} />
+          <VerticalTabs activeTab={this.state.activeTab} labels = {this._labels} handleChange={this.handleTabChange} />
         </div>
 
         <div className='text'>
@@ -47,22 +49,19 @@ class Home extends Component {
                   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque fugiat inventore numquam vero saepe voluptatem deleniti pariatur nobis ducimus impedit, quod nesciunt eveniet fugit error aliquid ut laboriosam itaque expedita?</p>
 
                 );
-                break;
 
               case 1:
                 return (
 
                   <p> Tab 2</p>
 
-                )
-                break;
+                );
 
               case 2:
 
                 return (
                   <p> Tab 3</p>
                 );
-                break;
 
               default:
 
