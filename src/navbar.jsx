@@ -19,7 +19,6 @@ class VerticalTabs extends Component {
           orientation="vertical"
           variant="scrollable"
           aria-label="Vertical tabs example"
-          className="classes.tabs"
         >
           {
             (() => this.props.labels.map((currentLabel) => {
