@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 
 import './styles/navbar.scss'
 
-class VerticalTabs extends Component {
+class VerticalNavbar extends Component {
   constructor(props) {
     super(props);
   }
@@ -34,4 +34,4 @@ class VerticalTabs extends Component {
   }
 }
 
-export default VerticalTabs;
+export default VerticalNavbar;

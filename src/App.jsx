@@ -7,10 +7,10 @@ import Talks from './components/talks.jsx';
 import Teaching from './components/teaching.jsx';
 import Honors from './components/honors.jsx';
 import Miscellany from './components/miscellany.jsx';
-import { Redirect } from "react-router-dom";
-import VerticalTabs from './navbar.jsx';
 
 import './styles/App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import {
 	BrowserRouter as Router,
@@ -18,6 +18,7 @@ import {
 	Route,
 	Link
 } from "react-router-dom";
+import ResponsiveNavbar from "./components/common/responsive-navbar.jsx";
 
 class App extends Component {
 	constructor(props) {
@@ -30,8 +31,50 @@ class App extends Component {
 
 		}
 
-		this._labels = ['Home', 'News', 'Projects', 'Publications', 'Talks', 'Teaching', 'Honors', 'Miscellany']
+		this._tabs = [
+			{
+				name: 'Home',
+				link: '/'
+
+			},
+			{
+				name: 'News',
+				link: '/news'
+
+			},
+			{
+				name: 'Projects',
+				link: '/projects'
+
+			},
+			{
+				name: 'Publications',
+				link: '/publications'
+
+			},
+			{
+				name: 'Talks',
+				link: '/talks'
+
+			},
+			{
+				name: 'Teaching',
+				link: '/teaching'
+
+			},
+			{
+				name: 'Honors',
+				link: '/honors'
+
+			},
+			{
+				name: 'Miscellany',
+				link: '/miscellany'
+
+			}
+		]
 	}
+
 
 	handleTabChange = (evt, newValue) => {
 		this.setState((prevState) => {
@@ -50,49 +93,12 @@ class App extends Component {
 				<div className="app">
 
 					<div>
-						<VerticalTabs activeTab={this.state.activeTab} labels={this._labels} handleChange={this.handleTabChange} />
+
+						<ResponsiveNavbar tabs={this._tabs} />
+
 					</div>
 
-
 					<div>
-
-						{(() => {
-
-							switch (this.state.activeTab) {
-
-								case 0:
-
-									return <Redirect to='/' />
-
-								case 1:
-									return <Redirect to='/news' />
-
-								case 2:
-
-									return <Redirect to='/projects' />
-
-								case 3:
-
-									return <Redirect to='/publications' />
-								case 4:
-
-									return <Redirect to='/talks' />
-								case 5:
-
-									return <Redirect to='/teaching' />
-								case 6:
-
-									return <Redirect to='/honors' />
-								case 7:
-
-									return <Redirect to='/miscellany' />
-
-								default:
-
-									return <Redirect to='/' />
-
-							}
-						})()}
 
 						<Switch>
 							<Route path="/news">
