@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+class News extends Component {
 
 
   render() {
 
     return (
 
-      <div className='home'>
+      <div className='news'>
 
-        I am on Home
+        I am on News
+
+
 
       </div>
 
@@ -19,4 +21,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default News;
