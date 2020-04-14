@@ -1,0 +1,19 @@
+.home {
+
+	display: flex;
+	margin-top: 64px;
+	margin-left: 64px;
+	
+	.description {
+
+		min-width: 200px;
+		max-width: 700px;
+
+	}
+
+	.my-image {
+		max-width: 300px;
+		margin-left: 128px;
+		margin-right: 128px;
+	}
+}
